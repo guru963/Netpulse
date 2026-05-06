@@ -1,97 +1,79 @@
-# ⚡ NetPulse
+# NetPulse: Advanced Network Intelligence for Educational Campuses
 
-**Real-time network intelligence and diagnostic dashboard tailored for Indian college campuses.**
+NetPulse is a sophisticated, full-stack network diagnostic platform engineered to provide real-time visibility into complex network environments. While optimized for Indian college campuses and high-density hostel networks, its architecture is robust enough for any distributed enterprise environment.
 
-NetPulse is a full-stack diagnostic tool designed to help students identify, analyze, and report network issues in high-density environments like college hostels and campuses. It benchmarks DNS speed, measures HTTP latency across global CDNs, detects packet loss, and generates professional IT support reports.
-
-**Live Backend:** [https://netpulse-rht0.onrender.com/](https://netpulse-rht0.onrender.com/)
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![React](https://img.shields.io/badge/frontend-React-61dafb.svg)
-![Node](https://img.shields.io/badge/backend-Node.js-339933.svg)
-![Cloudflare](https://img.shields.io/badge/edge-Cloudflare_Workers-f38020.svg)
+**Live Backend Instance:** [https://netpulse-rht0.onrender.com/](https://netpulse-rht0.onrender.com/)
 
 ---
 
-## ✨ Features
+## Executive Overview
 
-- **🛡️ Network Vitality Score**: A real-time health grade (A-F) based on packet loss, latency, and DNS performance.
-- **🚀 Experience Readiness**: Instant grades for real-world activities:
-  - **Gaming**: Competitive readiness for Valorant, CS, and Mobile Legends.
-  - **Streaming**: 4K readiness for YouTube, Netflix, and Twitch.
-  - **Meetings**: Stability check for Zoom, Google Meet, and Discord.
-- **🗺️ Trace Path Analysis**: Visualize the journey of your data from your room through the campus switch to the ISP backbone and Cloudflare edge.
-- **📊 Latency Distribution**: Compare response times for global services (Google, GitHub) vs local Indian CDNs.
-- **📝 Automated IT Reporting**: 
-  - One-click **Copy to Clipboard** for quick support chats.
-  - Professional **PDF Report Generation** with auto-detected ISP/College info to send to campus admins.
-- **🌐 Cloudflare Edge Benchmarking**: Compare your direct connection speed against Cloudflare's regional edge POPs.
+NetPulse addresses the critical visibility gap in managed network infrastructures. By combining low-level ICMP diagnostics with application-layer performance probing, the platform translates raw network telemetry into actionable intelligence. It enables end-users to quantify their network experience and provides administrators with standardized diagnostic reports for rapid troubleshooting.
 
 ---
 
-## 🛠️ Tech Stack
+## Core Capabilities
 
-- **Frontend**: React 18, Vite, Recharts (Data Viz), Lucide React (Icons), jsPDF.
-- **Backend**: Node.js, Express, Axios, Ping (ICMP diagnostics).
-- **Edge**: Cloudflare Workers (Latency benchmarking & GeoIP detection).
-- **Styling**: Premium CSS with Glassmorphism and Animated Backgrounds.
+### Performance Benchmarking
+- **DNS Resolver Analytics**: Comparative analysis of ISP-provided name resolution versus global public resolvers (Cloudflare, Google, Quad9) to identify resolution bottlenecks.
+- **Multi-Layer Latency Probing**: Simultaneous HTTP/HTTPS RTT measurement across a diverse array of global CDNs and local infrastructure endpoints.
+- **ICMP Packet Analysis**: High-precision packet loss detection with statistical quality grading (Excellent to Critical).
+
+### Intelligent Diagnostics
+- **Experience Readiness Scoring**: Algorithmic evaluation of network suitability for specific high-bandwidth and low-latency workloads, including Competitive Gaming, 4K Media Streaming, and Real-time Teleconferencing.
+- **Network Path Visualization**: A visual representation of the data transit path, identifying specific congestion points across local switches, campus firewalls, and ISP backbones.
+- **Edge Performance Delta**: Integration with Cloudflare Workers to measure the performance benefit of edge computing versus direct origin transit.
+
+### Administrative Support Tools
+- **Automated Incident Reporting**: Generation of standardized diagnostic reports in both plaintext and PDF formats, facilitating formal communication with IT departments.
+- **Infrastructure Fingerprinting**: Automated detection of ISP, Organization (ASN), and geographic data-center routing.
 
 ---
 
-## 🚀 Getting Started
+## Technical Architecture
 
-### Prerequisites
-- Node.js (v18+)
-- npm or yarn
+### Frontend
+Built with React and Vite, the interface utilizes a high-performance rendering engine for data visualization. 
+- **Data Viz**: Custom implementations using Recharts for latency distribution.
+- **Iconography**: Minimalist vector assets via Lucide React.
+- **Reporting**: Client-side PDF generation using the jsPDF library.
 
-### 1. Clone the Repository
+### Backend
+A Node.js/Express microservice designed for concurrent diagnostic execution.
+- **Diagnostic Engine**: Modular prober architecture utilizing native system calls for ICMP and asynchronous HTTP/DNS resolution.
+- **Scoring Logic**: A weighted heuristic engine that evaluates network health based on multi-dimensional telemetry.
+
+### Edge
+Cloudflare Workers integration providing global latency benchmarks and geographic routing intelligence.
+
+---
+
+## Implementation Guide
+
+### Installation
+
+Clone the repository and install dependencies for both segments:
+
 ```bash
-git clone https://github.com/guru963/Netpulse.git
-cd Netpulse
-```
-
-### 2. Setup Backend
-```bash
+# Backend Setup
 cd backend
 npm install
 npm start
-```
-*Backend runs on `http://localhost:3000`*
 
-### 3. Setup Frontend
-```bash
+# Frontend Setup
 cd ../frontend
 npm install
-# Update .env with your backend/worker URLs
 npm run dev
 ```
-*Frontend runs on `http://localhost:5173`*
+
+### Configuration
+Environment variables should be configured in the `frontend/.env` file to point to your respective backend and worker instances.
 
 ---
 
-## 📁 Project Structure
-
-```text
-├── backend/            # Express server & network probers
-│   ├── probers/        # DNS, HTTP, Packet Loss logic
-│   └── index.js        # API endpoints & scoring engine
-├── frontend/           # React dashboard
-│   ├── src/
-│   │   ├── components/ # Modular UI components
-│   │   ├── App.jsx     # Main dashboard logic
-│   │   └── index.css   # Premium design system
-├── worker/             # Cloudflare Worker script
-└── README.md
-```
+## License
+Distributed under the MIT License.
 
 ---
 
-## 📄 License
-This project is licensed under the MIT License.
-
----
-
-## 🤝 Contributing
-Feel free to fork this project and submit PRs! Whether it's adding new probers or improving the UI, all contributions are welcome.
-
-**Made for students, by students.** 🎓⚡
+**NetPulse** | Providing transparency to managed network environments.
