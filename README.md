@@ -4,6 +4,8 @@
 
 NetPulse is a full-stack diagnostic tool designed to help students identify, analyze, and report network issues in high-density environments like college hostels and campuses. It benchmarks DNS speed, measures HTTP latency across global CDNs, detects packet loss, and generates professional IT support reports.
 
+**Live Backend:** [https://netpulse-rht0.onrender.com/](https://netpulse-rht0.onrender.com/)
+
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![React](https://img.shields.io/badge/frontend-React-61dafb.svg)
 ![Node](https://img.shields.io/badge/backend-Node.js-339933.svg)

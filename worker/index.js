@@ -15,7 +15,7 @@ export default {
 
     // Ping the backend to measure edge → origin latency
     // Replace BACKEND_URL with your deployed backend URL
-    const BACKEND_URL = env.BACKEND_URL || 'https://your-backend.railway.app/api/health';
+    const BACKEND_URL = env.BACKEND_URL || 'https://netpulse-rht0.onrender.com/api/health';
 
     let originLatency = null;
     let originReachable = false;
