@@ -1,0 +1,29 @@
+/* App.css is largely replaced by index.css for global styles. 
+   Specific component overrides can go here. */
+
+.icon-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Custom scrollbar for cards */
+.card ::-webkit-scrollbar {
+  width: 4px;
+}
+
+.card ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.card ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
